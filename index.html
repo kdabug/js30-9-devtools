@@ -15,17 +15,68 @@
         p.style.fontSize = "50px";
       }
       // Regular
+      console.log("hellow world");
       // Interpolated
+      console.log("hello world, i am a %s string", "poop emoji");
+
       // Styled
+      //%c in front of what you want to style
+      console.log(
+        "%c hellow world, I am some great text', 'font-size: 50px; baground color: red"
+      );
+
       // warning!
+      console.warn("oh no");
+
       // Error :|
+      console.error("oh no!");
+
       // Info
+      console.info("crocs eat 3-4 people per year");
+
       // Testing
+      const p = document.querySelector("p");
+      console.asser(p.classList.contains("ouch"), "that is not right");
+
       // clearing
+      //clears the console
+      console.clear();
+
       // Viewing DOM Elements
+      console.log(p);
+      //see properties and methods that live on that element
+      console.dir(p);
+
       // Grouping together
+      dogs.forEach(dog => {
+        //can switch .group with .groupCollapsed for readability
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`This is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+      });
+
       // counting
+      console.count("Mikayda");
+      console.count("Dallin");
+      console.count("Dallin");
+      console.count("Dallin");
+      console.count("Dallin");
+      console.count("Dallin");
+      console.count("Mikayda");
+
       // timing
+      console.time("fetching data");
+      fetch("https://api.github.com/users/wesbos")
+        .then(data => data.json())
+        .then(data => {
+          console.timeEnd("fetching data");
+          console.log(data);
+        });
+
+      //table (takes an array of objects, assuming they all have the same properties, will display in a table)
+      console.table(dogs);
     </script>
   </body>
 </html>
